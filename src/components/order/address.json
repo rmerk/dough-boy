@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_order_addresses",
+  "info": {
+    "displayName": "Address",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "addressTwo": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "MN"
+      ],
+      "required": true
+    },
+    "zipcode": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

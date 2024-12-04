@@ -1,0 +1,13 @@
+{
+  "extends": "@strapi/typescript-utils/tsconfigs/admin",
+  "include": [
+    "./src",
+    "./custom.d.ts",
+    "../../square-payments/utils",
+    "../../square-payments/pluginId.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": "../",
+    "baseUrl": "."
+  }
+}

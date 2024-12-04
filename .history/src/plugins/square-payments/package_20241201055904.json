@@ -1,0 +1,13 @@
+{
+  "name": "strapi-plugin-square-payments",
+  "version": "1.0.0",
+  "description": "Square payments integration for Strapi",
+  "strapi": {
+    "name": "square-payments",
+    "description": "Integrate Square payments into your Strapi application",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "square": "^30.0.0"
+  }
+}

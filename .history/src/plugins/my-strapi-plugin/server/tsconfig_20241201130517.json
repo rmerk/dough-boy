@@ -1,0 +1,11 @@
+{
+  "extends": "@strapi/typescript-utils/tsconfigs/server",
+  "include": [
+    "./src",
+    "../../square-payments/server/services/service.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": "../",
+    "baseUrl": "."
+  }
+}

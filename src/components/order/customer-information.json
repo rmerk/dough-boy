@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_order_customer_informations",
+  "info": {
+    "displayName": "Customer Information",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "customerName": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "customerEmail": {
+      "type": "email",
+      "required": true
+    },
+    "customerPhone": {
+      "type": "string",
+      "required": true
+    },
+    "customerAddress": {
+      "displayName": "Address",
+      "type": "component",
+      "repeatable": false,
+      "component": "order.address",
+      "required": true
+    },
+    "billingAddress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "order.address",
+      "required": true
+    }
+  }
+}

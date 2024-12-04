@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_attributes",
+  "info": {
+    "displayName": "Attributes",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Size": {
+      "type": "enumeration",
+      "enum": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "default": "Medium"
+    }
+  }
+}
