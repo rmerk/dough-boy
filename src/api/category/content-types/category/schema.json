@@ -33,11 +33,11 @@
       "target": "api::product.product",
       "inversedBy": "categories"
     },
-    "gallery": {
+    "galleries": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::gallery.gallery",
-      "inversedBy": "categories"
+      "mappedBy": "category"
     }
   }
 }

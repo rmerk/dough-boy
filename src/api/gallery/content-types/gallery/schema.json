@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "galleryImage": {
+    "images": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -23,24 +23,11 @@
         "audios"
       ]
     },
-    "name": {
-      "type": "string"
-    },
-    "date": {
-      "type": "date"
-    },
-    "location": {
-      "type": "string",
-      "default": "St. Michael, MN"
-    },
-    "categories": {
+    "category": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::category.category",
-      "mappedBy": "gallery"
-    },
-    "description": {
-      "type": "text"
+      "inversedBy": "galleries"
     }
   }
 }

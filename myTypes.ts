@@ -106,7 +106,7 @@ export interface Category {
   articles?: Article[] | null;
   description?: string;
   product?: Product | null;
-  gallery?: Gallery | null;
+  galleries?: Gallery[] | null;
 };
 
 export interface Fulfillment {
@@ -130,12 +130,8 @@ export interface Gallery {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  galleryImage?: Media[] | null;
-  name?: string;
-  date?: Date | string;
-  location?: string;
-  categories?: Category[] | null;
-  description?: string;
+  images?: Media[] | null;
+  category?: Category | null;
 };
 
 export interface Global {
