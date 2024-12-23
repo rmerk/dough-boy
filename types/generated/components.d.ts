@@ -26,6 +26,7 @@ export interface OrderBillingAddress extends Struct.ComponentSchema {
 export interface OrderCustomerInformation extends Struct.ComponentSchema {
   collectionName: 'components_order_customer_informations';
   info: {
+    description: '';
     displayName: 'Customer Information';
     icon: 'bulletList';
   };

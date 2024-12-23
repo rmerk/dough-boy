@@ -106,6 +106,36 @@ export interface Category {
   articles?: Article[] | null;
   description?: string;
   product?: Product | null;
+  gallery?: Gallery | null;
+};
+
+export interface Fulfillment {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  shippingMethod?: "Customer Pickup" | "USPS Standard" | "USPS Express" | "UPS Ground";
+  trackingNumber?: string;
+  shippingStatus?: "Pending" | "Shipped" | "Delivered" | "Returned" | "Cancelled";
+  estimatedDeliveryDate?: Date | string;
+  order?: Order | null;
+};
+
+export interface Gallery {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  galleryImage?: Media[] | null;
+  name?: string;
+  date?: Date | string;
+  location?: string;
+  categories?: Category[] | null;
+  description?: string;
 };
 
 export interface Global {
@@ -121,6 +151,18 @@ export interface Global {
   defaultSeo?: SharedSeo | null;
 };
 
+export interface LeadForm {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
 export interface Order {
   id?: number;
   documentId?: string;
@@ -129,9 +171,18 @@ export interface Order {
   publishedAt?: Date | string;
   locale?: string | null;
   orderId?: string;
-  orderDate?: Date | string;
-  orderStatus?: "Processing" | "Pending" | "Shipped" | "Delivered" | "Cancelled";
-  customerInformation?: OrderCustomerInformation | null;
+  orderDate: Date | string;
+  orderStatus: "Processing" | "Pending" | "Shipped" | "Delivered" | "Cancelled" | "Complete";
+  customerInformation: OrderCustomerInformation | null;
+  orderTotal: number;
+  products?: Product[] | null;
+  fulfillments?: Fulfillment[] | null;
+  notes?: string;
+  adminNotes?: string;
+  discountCode?: string;
+  discountAmount?: number;
+  users_permissions_user?: User | null;
+  quantities: Record<string, any>;
 };
 
 export interface Product {
@@ -146,11 +197,11 @@ export interface Product {
   description: string;
   productImage?: Media | null;
   price: number;
-  quantity?: number;
   stockStatus: "In stock" | "Out of stock";
   categories?: Category[] | null;
   attribute?: SharedAttributes[] | null;
   featured?: boolean;
+  order?: Order | null;
 };
 
 export interface Media {

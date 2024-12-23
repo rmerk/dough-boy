@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fulfillments",
+  "info": {
+    "singularName": "fulfillment",
+    "pluralName": "fulfillments",
+    "displayName": "Fulfillment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shippingMethod": {
+      "type": "enumeration",
+      "enum": [
+        "Customer Pickup",
+        "USPS Standard",
+        "USPS Express",
+        "UPS Ground"
+      ]
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "shippingStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Shipped",
+        "Delivered",
+        "Returned",
+        "Cancelled"
+      ]
+    },
+    "estimatedDeliveryDate": {
+      "type": "date"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "fulfillments"
+    }
+  }
+}

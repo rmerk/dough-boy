@@ -16,7 +16,8 @@
       "type": "uid"
     },
     "orderDate": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "orderStatus": {
       "type": "enumeration",
@@ -25,15 +26,57 @@
         "Pending",
         "Shipped",
         "Delivered",
-        "Cancelled"
+        "Cancelled",
+        "Complete"
       ],
-      "default": "Pending"
+      "default": "Pending",
+      "required": true
     },
     "customerInformation": {
       "displayName": "Customer Information",
       "type": "component",
       "repeatable": false,
-      "component": "order.customer-information"
+      "component": "order.customer-information",
+      "required": true
+    },
+    "orderTotal": {
+      "type": "decimal",
+      "required": true,
+      "unique": false
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "order"
+    },
+    "fulfillments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fulfillment.fulfillment",
+      "mappedBy": "order"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "adminNotes": {
+      "type": "string",
+      "private": true
+    },
+    "discountCode": {
+      "type": "string"
+    },
+    "discountAmount": {
+      "type": "integer"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "quantities": {
+      "type": "json",
+      "required": true
     }
   }
 }
